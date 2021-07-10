@@ -45,7 +45,10 @@ const config = {
 
 export default function App() {
   return (
-    <SearchProvider config={config}>
+    <SearchProvider config={initialState: {
+            resultsPerPage: 100
+        }}>
+    <ResultsPerPage options={[25, 50, 100]} />
       <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
         {({ wasSearched }) => {
           return (
